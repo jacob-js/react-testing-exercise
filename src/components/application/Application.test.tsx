@@ -12,7 +12,10 @@ describe("Application", () =>{
 
         const sectionHeading = screen.getByRole("heading", {
             level: 2
-        })
+        });
+
+        const paragraphElement = screen.getByText("All fields are mandatory");
+        expect(paragraphElement).toBeInTheDocument();
         
         const nameElement = screen.getByPlaceholderText("Fullname");
         expect(nameElement).toBeInTheDocument();
