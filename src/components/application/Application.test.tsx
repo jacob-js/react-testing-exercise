@@ -14,9 +14,7 @@ describe("Application", () =>{
             level: 2
         })
         
-        const nameElement = screen.getByRole("textbox", {
-            name: "Name"
-        });
+        const nameElement = screen.getByLabelText("Name");
         expect(nameElement).toBeInTheDocument();
 
         const bioElement = screen.getByRole('textbox', {
@@ -26,5 +24,8 @@ describe("Application", () =>{
 
         const jobLocationElement = screen.getByRole('combobox');
         expect(jobLocationElement).toBeInTheDocument();
+
+        const termsElement = screen.getByLabelText("I agree to the terms and conditions");
+        expect(termsElement).toBeInTheDocument();
     })
 })
